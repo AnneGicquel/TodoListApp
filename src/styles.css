@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* IMPORT QUICKSAND */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+/* font-family: 'Quicksand', sans-serif; */
+
+
+
+/* VARIABLES */
+:root {
+    --bluenight: #040722;
+    --darkblue: #1D2038;
+    --pink: #E475F1;
+    --yellow: #F3D24F;
+    --lightblue: #64A7D9;
+    --lightgreen: #88E7A1;
+    --white: #FFFFFF;
+    --quicksand: 'Quicksand', sans-serif; 
+}
+
+/* NORMALIZE */
+*, body{
+    padding: 0;
+    margin: 0;
+    /* ?? */
+    list-style:none; 
+    font-family: var(--quicksand);
+    /* sauf sur le header qui sera à 20px */
+    font-size: 16px;
+    color: var(--white);   
+}
+
+button{
+    all:unset;
+}
+
+a{ 
+    text-decoration:none; 
+} 
+
+/* BACKGROUND-COLOR */
+body{
+    background-color: var(--bluenight);
+}
