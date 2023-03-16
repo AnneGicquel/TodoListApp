@@ -1,0 +1,17 @@
+.header{
+    display: flex; 
+    align-items: flex-end;
+    box-sizing: border-box;
+    border-bottom: 1px solid #FFFFFF;
+    width: 390px;
+    height: 70px;
+    left: 0px;
+    top: 0px;
+}
+
+h3{
+    margin-left: 26px;
+    margin-bottom: 10px;
+}
+
+

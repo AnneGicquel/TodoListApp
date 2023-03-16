@@ -7,6 +7,7 @@ import { NoTaskComponent } from './pages/no-task/no-task.component';
 import { NewTaskComponent } from './pages/new-task/new-task.component';
 import { TaskListComponent } from './pages/task-list/task-list.component';
 import { HistoryComponent } from './pages/history/history.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HistoryComponent } from './pages/history/history.component';
     NoTaskComponent,
     NewTaskComponent,
     TaskListComponent,
-    HistoryComponent
+    HistoryComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
