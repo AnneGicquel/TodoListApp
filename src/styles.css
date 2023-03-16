@@ -38,6 +38,7 @@ a{
     text-decoration:none; 
 } 
 
+/* retire la bordure */
 button{
     all:unset;
 }

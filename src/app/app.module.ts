@@ -8,6 +8,7 @@ import { NewTaskComponent } from './pages/new-task/new-task.component';
 import { TaskListComponent } from './pages/task-list/task-list.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HeaderComponent } from './components/header/header.component';
     NewTaskComponent,
     TaskListComponent,
     HistoryComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
