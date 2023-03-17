@@ -1,0 +1,22 @@
+.noTaskContainer{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.pAndBtnNoTask{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.btnCreateATask{
+    margin-top: 32px;
+    width: 248px;
+    height: 48px;
+    background: var(--lightblue);
+    border-radius: 30px;
+    text-align: center;
+}
