@@ -1,0 +1,44 @@
+<main class="mainNewTask">
+
+    <div class="topNewTaskContainer"> 
+        <p>Sélectionnez votre catégorie :</p>
+        <div class="btnTaskCategoryGroup">
+            <button class="btnTaskCategory">🛍️</button>
+            <button class="btnTaskCategory">💊️</button>
+            <button class="btnTaskCategory">💼</button>
+            <button class="btnTaskCategory">💸</button>
+            <button class="btnTaskCategory">🧼</button>
+            <button class="btnTaskCategory">🤷‍♀️</button>
+        </div>
+    </div>  
+
+    
+    <div class="middleNewTaskContainer">
+       <!-- lier le formulaire tableForm à la balise form / lier le ts au html-->
+        <form>
+            <!-- <form [formGroup]="tableForm"> -->
+
+            <!-- for pour lier le label à l'input -->
+            <label>Quelle tâche avez vous à effectuer ?</label>
+    
+            
+            <!--attribuer un formControlName qui correspond à la clé de tableForm -->
+            <div class="inputNewTaskContainer">
+                <!-- includes() détermine si un tableau contient une valeur et renvoie true si c'est le cas, false sinon. -->
+                <input type="text" placeholder="Exemple : Faire les courses"  class="entry-field" 
+                formControlName="table_number">
+
+                <input type="radio">La tâche est urgente ⚠️
+                    
+                <button class="btnValidatetask" type="submit">Valider ma tâche</button>
+            </div>
+                
+                
+            
+            
+        </form>
+        
+    </div>
+    
+    
+</main>
