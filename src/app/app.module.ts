@@ -12,6 +12,7 @@ import { CptNoTaskComponent } from './components/cpt-no-task/cpt-no-task.compone
 import { CptTaskListComponent } from './components/cpt-task-list/cpt-task-list.component';
 import { CptHistoryComponent } from './components/cpt-history/cpt-history.component';
 import { CptNewTaskComponent } from './components/cpt-new-task/cpt-new-task.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { CptNewTaskComponent } from './components/cpt-new-task/cpt-new-task.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
