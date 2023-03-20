@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ITodo, TODO } from 'src/app/mocks/todo.mock';
+// import { ITodo} from 'src/app/mocks/todo.mock';
 
 @Component({
   selector: 'app-cpt-task-list',
@@ -8,6 +8,6 @@ import { ITodo, TODO } from 'src/app/mocks/todo.mock';
 })
 export class CptTaskListComponent {
     // liste des tâches à accomplir
-    todo: ITodo[] = TODO;
+    // todo: ITodo[] = [];
 
 }

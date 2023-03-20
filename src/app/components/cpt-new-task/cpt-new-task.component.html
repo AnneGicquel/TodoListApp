@@ -1,36 +1,49 @@
 <main class="mainNewTask">
 
+
+    <!-- Un groupe radio est défini en attribuant la même valeur à chacun
+         des boutons radio du groupe name. Une fois qu'un groupe radio est 
+         établi, la sélection d'un bouton radio dans ce groupe désélectionne 
+         automatiquement tout bouton radio actuellement sélectionné 
+         dans le même groupe. -->
+
+         
     <div class="topNewTaskContainer"> 
         <p>Sélectionnez votre catégorie :</p>
         <div class="btnTaskCategoryGroup">
-            <button class="btnTaskCategory">🛍️</button>
-            <button class="btnTaskCategory">💊️</button>
-            <button class="btnTaskCategory">💼</button>
-            <button class="btnTaskCategory">💸</button>
-            <button class="btnTaskCategory">🧼</button>
-            <button class="btnTaskCategory">🤷‍♀️</button>
+            <input type="radio" id="categoryChoice1" name="category" value="shopping" [(ngModel)]="selectedCategory"/> 
+            <!-- jouer avec les label pour les emoji -->
+            <input type="radio" id="categoryChoice2" name="category" value="💊️"[(ngModel)]="selectedCategory"/>
+            <input type="radio" id="categoryChoice3" name="category" value="💼" [(ngModel)]="selectedCategory"/>
+            <input type="radio" id="categoryChoice4" name="category" value="💸" [(ngModel)]="selectedCategory"/>
+            <input type="radio" id="categoryChoice5" name="category" value="🧼" [(ngModel)]="selectedCategory"/>
+            <input type="radio" id="categoryChoice6" name="category" value="🤷‍♀️" [(ngModel)]="selectedCategory"/>
         </div>
     </div>  
 
     
     <div class="middleNewTaskContainer">
-       <!-- lier le formulaire tableForm à la balise form / lier le ts au html-->
-        <form>
-            <!-- <form [formGroup]="tableForm"> -->
+        <p>Quelle tâche avez vous à effectuer ?</p>
 
-            <!-- for pour lier le label à l'input -->
-            <label>Quelle tâche avez vous à effectuer ?</label>
+        <!-- lier le formulaire taskForm à la balise form / lier le ts au html-->
+        <form [formGroup]="taskForm" (ngSubmit)="onSubmit()"> 
+
+            
     
             
-            <!--attribuer un formControlName qui correspond à la clé de tableForm -->
+            <!--attribuer un formControlName qui correspond à la clé de taskForm -->
             <div class="inputNewTaskContainer">
                 <!-- includes() détermine si un tableau contient une valeur et renvoie true si c'est le cas, false sinon. -->
-                <input type="text" placeholder="Exemple : Faire les courses"  class="entry-field" 
-                formControlName="table_number">
+                <textarea type="text" placeholder="Exemple : Faire les courses"  class="entry-field" 
+                formControlName="task_todo"></textarea>
+                <!-- textarea et non input pour la mise en forme -->
+                <!-- <input type="text" placeholder="Exemple : Faire les courses"  class="entry-field" 
+                formControlName="task_todo"> -->
+                <!-- formControlName="task_todo" [(ngModel)]="newTask"> -->
 
-                <input type="radio">La tâche est urgente ⚠️
+                <input type="checkbox" (click)="isUrgent()" >La tâche est urgente ⚠️
                     
-                <button class="btnValidatetask" type="submit">Valider ma tâche</button>
+                <button class="btnValidatetask" type="submit" (click)="addTask()">Valider ma tâche</button>
             </div>
                 
                 
