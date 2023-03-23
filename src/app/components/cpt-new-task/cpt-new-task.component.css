@@ -1,15 +1,86 @@
+/* BOUTONS CATEGORIES */
+
 .btnTaskCategoryGroup{
     display: flex;
     justify-content: space-around;
 }
 
-.btnTaskCategory{
+input[type="radio"].categoryChoice1 {
+    display: none;
+}
+input[type="radio"].categoryChoice1 + label {
+    padding: 15px 18px;
+    line-height: 1.5;
+    border-radius: 50%; 
+    background-color: var(--darkblue);
+    border: 1px solid transparent;
+}
+
+
+input[type="radio"].categoryChoice2 {
+    display: none;
+}
+input[type="radio"].categoryChoice2 + label {
+    padding: 15px 18px;
+    line-height: 1.5;
+    border-radius: 50%; 
+    background-color: var(--darkblue);
+    border: 1px solid transparent;
+}
+
+input[type="radio"].categoryChoice3 {
+    display: none;
+}
+input[type="radio"].categoryChoice3 + label {
+    padding: 15px 18px;
+    line-height: 1.5;
+    border-radius: 50%; 
+    background-color: var(--darkblue);
+    border: 1px solid transparent;
+}
+
+input[type="radio"].categoryChoice4 {
+    display: none;
+}
+input[type="radio"].categoryChoice4 + label {
+    padding: 15px 18px;
+    line-height: 1.5;
+    border-radius: 50%; 
+    background-color: var(--darkblue);
+    border: 1px solid transparent;
+}
+
+input[type="radio"].categoryChoice5 {
+    display: none;
+}
+input[type="radio"].categoryChoice5 + label {
+    padding: 15px 18px;
+    line-height: 1.5;
+    border-radius: 50%; 
+    background-color: var(--darkblue);
+    border: 1px solid transparent;
+}
+
+input[type="radio"].categoryChoice6 {
+    display: none;
+}
+input[type="radio"].categoryChoice6 + label {
+    padding: 15px 18px;
+    line-height: 1.5;
+    border-radius: 50%; 
+    background-color: var(--darkblue);
+    border: 1px solid transparent;
+}
+
+
+/* PARTIE FORMULAIRE */
+/* .btnTaskCategory{
     width: 48px;
     height: 48px;
     border-radius: 50%;
     background-color: var(--darkblue);
     text-align: center;
-}
+} */
 
 .entry-field{
     width: 338px;
@@ -31,3 +102,20 @@
     background: rgba(100, 167, 217, 0.5);
     border-radius: 30px;
 }
+
+input .checkboxIsUrgent{
+    border-radius: 50%;
+}
+[type=checkbox] {
+    width: 25px;
+    height: 25px;
+    margin-right: 11px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    /* background: none; */
+    border-radius: 50%;
+    background-color:var(--darkblue);
+    /* transition: background 300ms; */
+    cursor: pointer;
+  }
+  
