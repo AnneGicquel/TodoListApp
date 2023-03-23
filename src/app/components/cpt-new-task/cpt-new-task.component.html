@@ -7,17 +7,28 @@
          automatiquement tout bouton radio actuellement sélectionné 
          dans le même groupe. -->
 
+
+    <!-- L’élément <label> doit être positionné juste en dessous de 
+         l’élément <input> dans le code HTML afin de pouvoir le cibler 
+         avec le combinateur de voisin direct + sous la forme 
+         input[type="radio"] + label ou input[type="radio"].demo + label 
+         pour préciser la classe CSS associée. -->
          
     <div class="topNewTaskContainer"> 
         <p>Sélectionnez votre catégorie :</p>
         <div class="btnTaskCategoryGroup">
-            <input type="radio" id="categoryChoice1" name="category" value="shopping" [(ngModel)]="selectedCategory"/> 
-            <!-- jouer avec les label pour les emoji -->
-            <input type="radio" id="categoryChoice2" name="category" value="💊️"[(ngModel)]="selectedCategory"/>
-            <input type="radio" id="categoryChoice3" name="category" value="💼" [(ngModel)]="selectedCategory"/>
-            <input type="radio" id="categoryChoice4" name="category" value="💸" [(ngModel)]="selectedCategory"/>
-            <input type="radio" id="categoryChoice5" name="category" value="🧼" [(ngModel)]="selectedCategory"/>
-            <input type="radio" id="categoryChoice6" name="category" value="🤷‍♀️" [(ngModel)]="selectedCategory"/>
+            <input type="radio" id="categoryChoice1" class="categoryChoice1" name="category" value="shopping" [(ngModel)]="selectedCategory"/> 
+            <label for="categoryChoice1">🛍</label>
+            <input type="radio" id="categoryChoice2" class="categoryChoice2" name="category" value="💊️"[(ngModel)]="selectedCategory"/>
+            <label for="categoryChoice1">💊️</label>
+            <input type="radio" id="categoryChoice3" class="categoryChoice3" name="category" value="💼" [(ngModel)]="selectedCategory"/>
+            <label for="categoryChoice1">💼</label>
+            <input type="radio" id="categoryChoice4" class="categoryChoice4" name="category" value="💸" [(ngModel)]="selectedCategory"/>
+            <label for="categoryChoice1">💸</label>
+            <input type="radio" id="categoryChoice5" class="categoryChoice5" name="category" value="🧼" [(ngModel)]="selectedCategory"/>
+            <label for="categoryChoice1">🧼</label>
+            <input type="radio" id="categoryChoice6" class="categoryChoice6" name="category" value="🤷‍♀️" [(ngModel)]="selectedCategory"/>
+            <label for="categoryChoice1">🤷‍♀️</label>
         </div>
     </div>  
 
@@ -41,7 +52,7 @@
                 formControlName="task_todo"> -->
                 <!-- formControlName="task_todo" [(ngModel)]="newTask"> -->
 
-                <input type="checkbox" (click)="isUrgent()" >La tâche est urgente ⚠️
+                <input class="checkboxIsUrgent" type="checkbox" (click)="isUrgent()">La tâche est urgente ⚠️
                     
                 <button class="btnValidatetask" type="submit" (click)="addTask()">Valider ma tâche</button>
             </div>
