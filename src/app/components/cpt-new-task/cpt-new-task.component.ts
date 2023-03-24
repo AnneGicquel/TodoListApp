@@ -12,17 +12,14 @@ export class CptNewTaskComponent {
 
   // VALEURS DU GROUPE DE BOUTONS CATEGORIES
   selectedCategory!: string;
-  
-  // BOUTON ISURGENT
-  isUrgent(){
-    return true
-  }
 
+  
+  
   // FORMULAIRE 
 
   // déclaration la propriété de type FormGroup
   taskForm!: FormGroup
-
+ 
   // injection de formBuilder pour permettre de construire un formulaire.
   constructor(private formBuilder: FormBuilder, public taskService: TodoListService) { }
 
@@ -31,12 +28,14 @@ export class CptNewTaskComponent {
     // .group({})-> prend un objet (avec la liste clé/valeur) en argument
     this.taskForm = this.formBuilder.group({
       // clé avec la valeur null par défaut
-      task_todo: [null]
-    })
+      task_todo: [null],/*initialisation à null*/
+      urgent: [false] /*initialisation à false*/
+      // changera de valeur au checked
+      })
   }
 
-  // LISTE DES TASK
-  // créer une liste vide pour les tâches à accomplir
+  // LISTE DES TASKS
+  // créer une liste vide pour récupérer les tâches à accomplir
   newTaskList:any [] = [];
 
   // SAISIE USER
@@ -45,16 +44,18 @@ export class CptNewTaskComponent {
     return this.taskForm.value;
   }
 
+ 
   // CREATION DES ID
   //créer un indice par rapport à l'index 
-  idNumber(){
-    let idNbr = 1
-    const newTaskListLength = this.newTaskList.length
-      if(newTaskListLength!==0){
-        idNbr+=newTaskListLength
-    }
-    return idNbr
-}
+  // idNumber() {
+  //   let lastIndex = this.newTaskList.length; // Récupère l'index du dernier élément dans le tableau
+  //   console.log('r' + lastIndex)
+  //   if (this.newTaskList.length !== 0) {
+  //     // S'il y a des éléments dans le tableau
+  //     ; // Récupère le dernier élément dans le tableau
+  //     return lastIndex + 1 // Retourne l'identifiant unique incrémenté de 1
+  //   } else{return 1}}
+  
 
   // RECUPERER SAISIE, TRANSFORMER EN OBJET ET L'ENVOYER AU LS
   addTask() {
@@ -65,10 +66,10 @@ export class CptNewTaskComponent {
 
     // construction de l'objet de la todo "todoObj"
     let todoObj = {
-      id: this.idNumber(),
+      id: this.newTaskList.length + 1,
       content: newTask,
       category: this.selectedCategory,
-      isUrgent: this.isUrgent() /*a faire !*/
+      isUrgent: this.taskForm.controls['urgent'].value /*valeur checked or not*/
     }
 
     // ajoute l'objet à la liste newTaskList
@@ -87,5 +88,3 @@ export class CptNewTaskComponent {
 
 
 }
-
-

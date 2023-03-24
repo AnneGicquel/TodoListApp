@@ -1,3 +1,5 @@
-<app-cpt-no-task class="noTask"></app-cpt-no-task>
+<!-- Si il n'y a pas d'objet dans le LS -->
+<app-cpt-no-task class="noTask" *ngIf="!itemSet"></app-cpt-no-task>
 
-<!-- condition d'affichage entre deux composant ou entre deux div..? voir pizzeria -->
+<!-- Si le LS contient une liste d'1 ou plusieurs objets -->
+<app-cpt-task-list *ngIf="itemSet"></app-cpt-task-list>

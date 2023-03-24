@@ -31,7 +31,7 @@ export class TodoListService {
   // }
 
   // CREATION DE LA LISTE DANS LE LS
-  addTaskToTodoList(newTask: { id: number; content: any; category: string; isUrgent: any /*boolean*/;}) {
+  addTaskToTodoList(newTask: { id: any; content: any; category: string; isUrgent: boolean /*boolean*/;}) {
 
     // Les newTask sont ajoutées au tableau vide
     this.todoListLS.push(newTask)
@@ -41,6 +41,11 @@ export class TodoListService {
     // je l'ajoute au LS
     localStorage.setItem('todoList', JSON.stringify(this.todoListLS));
   }
+
+  // // AFFICHAGE DES TACHES par PRIORITE
+  // getTaskByPriority(priority: ['isUrgent']): any [] {
+  //   return this.todoListLS.filter(task => task.priority === this.todoListLS );
+  // }
 }
 
 

@@ -111,11 +111,12 @@ input .checkboxIsUrgent{
     height: 25px;
     margin-right: 11px;
     vertical-align: middle;
-    -webkit-appearance: none;
-    /* background: none; */
+    -webkit-appearance: none; 
     border-radius: 50%;
     background-color:var(--darkblue);
-    /* transition: background 300ms; */
     cursor: pointer;
+  }
+  input:checked{
+    background-color: var(--pink); 
   }
   
