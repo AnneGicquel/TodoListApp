@@ -32,3 +32,9 @@ img {
 .iconPlusSize{
     width: 35%;
  }
+
+/* buttons chgmt of color */
+
+.lightgreen{
+    background-color: var(--lightgreen);
+}

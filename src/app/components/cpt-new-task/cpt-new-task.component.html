@@ -20,15 +20,15 @@
             <input type="radio" id="categoryChoice1" class="categoryChoice1" name="category" value="shopping" [(ngModel)]="selectedCategory"/> 
             <label for="categoryChoice1">🛍</label>
             <input type="radio" id="categoryChoice2" class="categoryChoice2" name="category" value="💊️"[(ngModel)]="selectedCategory"/>
-            <label for="categoryChoice1">💊️</label>
+            <label for="categoryChoice2">💊️</label>
             <input type="radio" id="categoryChoice3" class="categoryChoice3" name="category" value="💼" [(ngModel)]="selectedCategory"/>
-            <label for="categoryChoice1">💼</label>
+            <label for="categoryChoice3">💼</label>
             <input type="radio" id="categoryChoice4" class="categoryChoice4" name="category" value="💸" [(ngModel)]="selectedCategory"/>
-            <label for="categoryChoice1">💸</label>
+            <label for="categoryChoice4">💸</label>
             <input type="radio" id="categoryChoice5" class="categoryChoice5" name="category" value="🧼" [(ngModel)]="selectedCategory"/>
-            <label for="categoryChoice1">🧼</label>
+            <label for="categoryChoice5">🧼</label>
             <input type="radio" id="categoryChoice6" class="categoryChoice6" name="category" value="🤷‍♀️" [(ngModel)]="selectedCategory"/>
-            <label for="categoryChoice1">🤷‍♀️</label>
+            <label for="categoryChoice6">🤷‍♀️</label>
         </div>
     </div>  
 
@@ -52,9 +52,9 @@
                 formControlName="task_todo"> -->
                 <!-- formControlName="task_todo" [(ngModel)]="newTask"> -->
 
-                <input class="checkboxIsUrgent" type="checkbox" (click)="isUrgent()">La tâche est urgente ⚠️
+                <input class="checkboxIsUrgent" type="checkbox" formControlName="urgent">La tâche est urgente ⚠️
                     
-                <button class="btnValidatetask" type="submit" (click)="addTask()">Valider ma tâche</button>
+                <button class="btnValidatetask" type="submit" (click)="addTask()" routerLink="/">Valider ma tâche</button>
             </div>
                 
                 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoListService } from 'src/app/services/todo-list.service';
 // import { ITodo} from 'src/app/mocks/todo.mock';
 
 @Component({
@@ -7,7 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./cpt-task-list.component.css']
 })
 export class CptTaskListComponent {
-    // liste des tâches à accomplir
-    // todo: ITodo[] = [];
-
+    constructor(public taskService: TodoListService){}
+    
+    // todoObj = {
+    //   id: number,
+    //   content: any,
+    //   category: any,
+    //   isUrgent: boolean
+    // }
+    
 }
