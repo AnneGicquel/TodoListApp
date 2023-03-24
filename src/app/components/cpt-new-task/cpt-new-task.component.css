@@ -103,6 +103,13 @@ input[type="radio"].categoryChoice6 + label {
     border-radius: 30px;
 }
 
+.btnValidatetask:disabled,
+.btnValidatetask[disabled]{
+  background-color: #64A7D9; 
+  opacity: 0.5;
+}
+
+
 input .checkboxIsUrgent{
     border-radius: 50%;
 }
