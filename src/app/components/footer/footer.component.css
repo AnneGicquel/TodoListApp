@@ -35,6 +35,11 @@ img {
 
 /* buttons chgmt of color */
 
-.lightgreen{
+/* .lightgreen{
     background-color: var(--lightgreen);
-}
+} */
+
+/* ?????? */
+.btnTaskList:checked{
+    background-color: red; 
+  }

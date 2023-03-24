@@ -37,7 +37,7 @@
         <p>Quelle tâche avez vous à effectuer ?</p>
 
         <!-- lier le formulaire taskForm à la balise form / lier le ts au html-->
-        <form [formGroup]="taskForm" (ngSubmit)="onSubmit()"> 
+        <form [formGroup]="taskForm"> 
 
             
     
@@ -54,7 +54,7 @@
 
                 <input class="checkboxIsUrgent" type="checkbox" formControlName="urgent">La tâche est urgente ⚠️
                     
-                <button class="btnValidatetask" type="submit"(click)="addTask()" routerLink="/" [disabled]="!selectedCategory || taskForm.get('task_todo')?.invalid">Valider ma tâche</button>
+                <button class="btnValidatetask" type="submit" (click)="addTask()" [disabled]="!selectedCategory || taskForm.get('task_todo')?.invalid">Valider ma tâche</button>
             </div>
                 
                 
