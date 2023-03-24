@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  toggle = true;
+  // toggle = true;
   
-  changeColorMenuIcon() {
-      this.toggle = !this.toggle;
-  }
+  // changeColorMenuIcon() {
+  //     this.toggle = !this.toggle;
+  // }
 }

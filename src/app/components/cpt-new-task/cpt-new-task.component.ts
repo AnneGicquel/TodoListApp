@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { TodoListService } from 'src/app/services/todo-list.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class CptNewTaskComponent {
   taskForm!: FormGroup
  
   // injection de formBuilder pour permettre de construire un formulaire.
-  constructor(private formBuilder: FormBuilder, public taskService: TodoListService) { }
+  constructor(private formBuilder: FormBuilder, public taskService: TodoListService, public route: Router) { }
 
   ngOnInit() {
     // on assigne à 'taskForm' le formulaire qu'on va créer
@@ -40,9 +41,9 @@ export class CptNewTaskComponent {
 
   // SAISIE USER
   //récupèrer la saisie utilisateur.rice
-  onSubmit(): any {
-    return this.taskForm.value;
-  }
+  // onSubmit(): any {
+  //   return this.taskForm.value;
+  // }
 
  
   // CREATION DES ID
@@ -60,16 +61,16 @@ export class CptNewTaskComponent {
   // RECUPERER SAISIE, TRANSFORMER EN OBJET ET L'ENVOYER AU LS
   addTask() {
     // assigne la saisie utilisateur.rice à une variable
-    let newTask = this.onSubmit();
+    let newTask = this.taskForm.value;
     // a retirer
     console.log(newTask)
 
     // construction de l'objet de la todo "todoObj"
     let todoObj = {
       id: this.newTaskList.length + 1,
-      content: newTask,
+      content: newTask.task_todo,
       category: this.selectedCategory,
-      isUrgent: this.taskForm.controls['urgent'].value /*valeur checked or not*/
+      isUrgent: newTask.urgent /*valeur checked or not*/
     }
 
     // ajoute l'objet à la liste newTaskList
@@ -81,6 +82,10 @@ export class CptNewTaskComponent {
 
     // envoie la tâche au LocalStorage
     this.taskService.addTaskToTodoList(todoObj);
+
+    // redirige vers la page no-task qui répond maintenant 
+    // à la condition: LS non vide
+    this.route.navigate(['/'])
 
     // effacer la saisie ???? -> RESETTTT !!!
     // newTask = '';

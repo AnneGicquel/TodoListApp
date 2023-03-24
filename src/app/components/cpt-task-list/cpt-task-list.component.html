@@ -1,124 +1,23 @@
-<!-- <div class="taskListContainer"> -->
-
-  <!-- urgent = true -->
-  <!-- <div class="priority">
-      <label class="taskList" for="task-by-priority">⚠️ Tâches urgentes </label>
-      <ul>
-      <li *ngFor="let task of taskService.todoListLS; let indexTask = index"> 
-          
-        {{task.category}} {{task.content.task_todo}}
-  
-         
-          </li>
-      </ul>
-  </div> -->
-
-  <!-- urgent = false -->
-  <!-- <div class="priority">
-      <label class="taskList" for="task-by-priority">🌸 Autres tâches</label>
-      <ul>
-          <li *ngFor="let task of taskService.todoListLS; let indexTask = index"> 
-            {{task.category}} {{task.content.task_todo}}
-  
-              
-          </li>
-      </ul>
-  </div>
-
-</div> -->
-
-
-
-
-
-
-
-
-<!-- AVEC INPUT -->
-
-<!-- <div class="taskListContainer"> -->
-
-  <!-- urgent = true -->
-  <!-- <div class="priority">
-      <label class="taskList" for="task-by-priority">⚠️ Tâches urgentes </label>
-      
-      <input type="checkbox"*ngFor="let task of taskService.todoListLS; let indexTask = index"  > 
-          
-        {{task.category}} {{task.content.task_todo}}
-  
-  </div> -->
-
-  <!-- urgent = false -->
-  <!-- <div class="priority">
-      <label class="taskList" for="task-by-priority">🌸 Autres tâches</label>
-
-          <input type="checkbox" *ngFor="let task of taskService.todoListLS; let indexTask = index">
-             
-            {{task.category}} {{task.content.task_todo}}
-  
-              
-  </div>
-
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- if urgent -->
 
 <p>⚠️ Tâches urgentes </p>
 <ng-container *ngFor="let item of taskService.todoListLS">
-<div *ngIf="item.isUrg">
-  <label for="{{item.id}}">
-    <input class="test" id="{{item.id}}" [value]='item.id' type="checkbox" name="enums">
-    {{item.category}} {{item.content.task_todo}}
-  </label>
-</div>  
+  <div *ngIf="item.isUrgent">
+    <label for="{{item.id}}">
+      <input class="test" id="{{item.id}}" [value]='item.id' type="checkbox">
+      {{item.category}} {{item.content}}
+    </label>
+  </div>
+</ng-container>
 
 <!-- if not urgent -->
 
-<p>🌸 Autres tâches</p> 
-<div *ngFor="let item of taskService.todoListLS"> 
-<div *ngIf="!item.urgent">
-  <label for="{{item.content}}">
-    <input id="{{item.id}}" [value]='item.id' type="radio" name="enums">
-    {{item.category}} {{item.content.task_todo}}
-  </label>
-</div>  
-
-
-
-
-
-
-
-
-
-
-
-<!-- https://stackoverflow.com/questions/43582234/creating-multiple-radio-buttons-with-ngfor-angular2 -->
-
-<!-- <div *ngFor="let enum of enum_details">
-      <label for="enum_answer_{{enum.name}}">
-        <input id="enum_answer_{{enum.name}}" [value]='enum.name' type="radio" name="enums" [(ngModel)]="radioSelected">
-        {{enum.name}}
-      </label>
-    </div>
-    <button (click)='radioFun()'>Checked value of radio button</button> -->
+<p>🌸 Autres tâches</p>
+<ng-container *ngFor="let item of taskService.todoListLS">
+  <div *ngIf="!item.isUrgent">
+    <label for="{{item.content}}">
+      <input id="{{item.id}}" [value]='item.id' type="radio">
+      {{item.category}} {{item.content}}
+    </label>
+  </div>
+</ng-container>
