@@ -1,5 +1,13 @@
-<ul>
+<div *ngFor="let item of taskService.todoListLS">
+      <label for="{{item.id}}">
+        <input class="test" id="{{item.id}}" [value]='item.id' type="checkbox">
+        {{item.category}} {{item.content}}
+      </label>
+</div>
+
+
+<!-- <ul>
     <li *ngFor="let item of taskService.todoListLS">
-        {{item.category}} {{item.content.task_todo}}
+        {{item.category}} {{item.content}}
     </li> 
-</ul>
+</ul> -->  

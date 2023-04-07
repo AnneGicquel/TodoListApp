@@ -14,6 +14,8 @@ export class TodoListService {
   createTaskList() {
     // Je crée un tableau vide
     // const newTask: any[] = [];
+
+    //je transforme la todoList qui est un objet en string
     const newTask = JSON.stringify([]);
     
     // J'enregistre la liste dans le local storage avec le nom de clé todoList.
@@ -22,13 +24,22 @@ export class TodoListService {
   }
 
   // // RENVOIE DE LA LISTE CASTEE
-  // getTask():[]{
-  // // Je  récupère la todoList du LS et affecte sa valeur à une variable todoList
-  // const todoList = JSON.parse(localStorage.getItem('todoList') || '[]');
-  // console.log(this.getTask())
-  // return this.getTask()
+// /////////////////////////////////////////////////////////////////////////////
+  // Méthode pour récupérer la todoList et le créer si il n'existe pas
+   getTask(){
+  // Je  récupère la todoList du LS et affecte sa valeur à une variable todoList
+  const todoList = localStorage.getItem('todoList');
+  //si la todo existe, je la transforme en objet et la retourne
+  if (todoList){
+    return JSON.parse(todoList)
+  }else{
+    //sinon on crée la todoList et on la récupère. -> récursivité sur la fonction getTask
+    this.createTaskList();
+    this.getTask();
+  }
   
-  // }
+  }
+  
 
   // CREATION DE LA LISTE DANS LE LS
   addTaskToTodoList(newTask: { id: any; content: any; category: string; isUrgent: boolean /*boolean*/;}) {
@@ -42,10 +53,7 @@ export class TodoListService {
     localStorage.setItem('todoList', JSON.stringify(this.todoListLS));
   }
 
-  // // AFFICHAGE DES TACHES par PRIORITE
-  // getTaskByPriority(priority: ['isUrgent']): any [] {
-  //   return this.todoListLS.filter(task => task.priority === this.todoListLS );
-  // }
+  
 }
 
 
