@@ -1,16 +1,18 @@
-.container {
+main {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 80vh; 
+    flex-direction: column; 
+    height: 100vh; 
+    max-height: 100vh; 
+    flex: 1;
+    overflow-y: scroll;
 }
 
-.header{
+/* .header{
     align-self: flex-start;
-}
+}*/
 
 
 .footer {
     align-self: flex-end;
     
-}
+} 

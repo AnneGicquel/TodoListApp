@@ -14,6 +14,7 @@ export class TodoListService {
   createTaskList() {
     // Je crée un tableau vide
     // const newTask: any[] = [];
+    
 
     //je transforme la todoList qui est un objet en string
     const newTask = JSON.stringify([]);
@@ -42,15 +43,16 @@ export class TodoListService {
   
 
   // CREATION DE LA LISTE DANS LE LS
-  addTaskToTodoList(newTask: { id: any; content: any; category: string; isUrgent: boolean /*boolean*/;}) {
+  addTaskToTodoList (newTask: { id: any; content: any; category: string; isUrgent: boolean /*boolean*/;}) {
 
     // Les newTask sont ajoutées au tableau vide
-    this.todoListLS.push(newTask)
+    // this.todoListLS.push(newTask)
     
     // Je récupère la liste
-    // const task = this.getTask();
+    const todoList = this.getTask();
+    todoList.push(newTask)
     // je l'ajoute au LS
-    localStorage.setItem('todoList', JSON.stringify(this.todoListLS));
+    localStorage.setItem('todoList', JSON.stringify(todoList));
   }
 
   

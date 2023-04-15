@@ -1,21 +1,39 @@
-<div class="footer">
+<!-- <div class="footer">
 
     <div class="buttons">
 
-        <button class="btnTaskList" routerLink="/">
-            <!-- (click)="changeColorMenuIcon()" 
-            [ngClass]="{'lightgreen' : toggle, 'darkblue': !toggle}"> -->
-            <img src="assets/icones_footer/menu.png" alt="icône menu">
+        <button class="btnTaskList" routerLink="/" routerLinkActive="active">
+            <img src="assets/svg_footer/list.svg" alt="icône menu">
         </button>
 
         <button class="btnNewTask" routerLink="/new">
-            <img class="iconPlusSize" src="assets/icones_footer/plus.png" alt="icône plus">
+            <img class="iconPlusSize" src="assets/svg_footer/plus.svg" alt="icône plus">
         </button>
 
         <button class="btnHistory" routerLink="/history">
-            <img src="assets/icones_footer/clock.png" alt="icône horloge">
+            <img src="assets/svg_footer/history.svg" alt="icône horloge">
         </button>
 
     </div>
 
+</div> -->
+
+<!-- <button [class.homePage]="router.url.endsWith('/')" class="btnTaskList" routerLink="/">
+    <img src="assets/svg_footer/list.svg" alt="icône menu">
+</button>  -->
+
+<div class="footer">
+    <div class="buttons"> <!-- Ajoutez la classe nav pour créer une barre de navigation -->
+        <button class="btnTaskList" routerLink="/" routerLinkActive="active"> <!-- Utilisez routerLinkActive et spécifiez la classe "active" -->
+            <img src="assets/svg_footer/list.svg" alt="icône menu">
+        </button>
+
+        <button class="btnNewTask" routerLink="/new" routerLinkActive="active"> <!-- Utilisez routerLinkActive et spécifiez la classe "active" -->
+            <img class="iconPlusSize" src="assets/svg_footer/plus.svg" alt="icône plus">
+        </button>
+
+        <button class="btnHistory" routerLink="/history" routerLinkActive="active"> <!-- Utilisez routerLinkActive et spécifiez la classe "active" -->
+            <img src="assets/svg_footer/history.svg" alt="icône horloge">
+        </button>
+    </div>
 </div>

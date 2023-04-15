@@ -13,56 +13,65 @@
          avec le combinateur de voisin direct + sous la forme 
          input[type="radio"] + label ou input[type="radio"].demo + label 
          pour préciser la classe CSS associée. -->
-         
-    <div class="topNewTaskContainer"> 
+
+    <div class="formContainer">
         <p>Sélectionnez votre catégorie :</p>
         <div class="btnTaskCategoryGroup">
-            <input type="radio" id="categoryChoice1" class="categoryChoice1" name="category" value="shopping" [(ngModel)]="selectedCategory" required/> 
+            <input type="radio" id="categoryChoice1" class="categoryChoice1" name="category" value="🛍"
+                [(ngModel)]="selectedCategory" required />
             <label for="categoryChoice1">🛍</label>
-            <input type="radio" id="categoryChoice2" class="categoryChoice2" name="category" value="💊️"[(ngModel)]="selectedCategory"required/>
+            <input type="radio" id="categoryChoice2" class="categoryChoice2" name="category" value="💊️"
+                [(ngModel)]="selectedCategory" required />
             <label for="categoryChoice2">💊️</label>
-            <input type="radio" id="categoryChoice3" class="categoryChoice3" name="category" value="💼" [(ngModel)]="selectedCategory"required/>
+            <input type="radio" id="categoryChoice3" class="categoryChoice3" name="category" value="💼"
+                [(ngModel)]="selectedCategory" required />
             <label for="categoryChoice3">💼</label>
-            <input type="radio" id="categoryChoice4" class="categoryChoice4" name="category" value="💸" [(ngModel)]="selectedCategory"required/>
+            <input type="radio" id="categoryChoice4" class="categoryChoice4" name="category" value="💸"
+                [(ngModel)]="selectedCategory" required />
             <label for="categoryChoice4">💸</label>
-            <input type="radio" id="categoryChoice5" class="categoryChoice5" name="category" value="🧼" [(ngModel)]="selectedCategory"required/>
+            <input type="radio" id="categoryChoice5" class="categoryChoice5" name="category" value="🧼"
+                [(ngModel)]="selectedCategory" required />
             <label for="categoryChoice5">🧼</label>
-            <input type="radio" id="categoryChoice6" class="categoryChoice6" name="category" value="🤷‍♀️" [(ngModel)]="selectedCategory"required/>
+            <input type="radio" id="categoryChoice6" class="categoryChoice6" name="category" value="🤷‍♀️"
+                [(ngModel)]="selectedCategory" required />
             <label for="categoryChoice6">🤷‍♀️</label>
         </div>
-    </div>  
 
-    
-    <div class="middleNewTaskContainer">
+
+
+        <!-- <div class="middleNewTaskContainer"> -->
         <p>Quelle tâche avez vous à effectuer ?</p>
 
         <!-- lier le formulaire taskForm à la balise form / lier le ts au html-->
-        <form [formGroup]="taskForm"> 
+        <form [formGroup]="taskForm">
 
-            
-    
-            
+
+
+
             <!--attribuer un formControlName qui correspond à la clé de taskForm -->
             <div class="inputNewTaskContainer">
                 <!-- includes() détermine si un tableau contient une valeur et renvoie true si c'est le cas, false sinon. -->
-                <textarea type="text" placeholder="Exemple : Faire les courses"  class="entry-field" 
-                formControlName="task_todo" required></textarea>
+                <textarea type="text" placeholder="Exemple : Faire les courses" class="entry-field"
+                    formControlName="task_todo" required></textarea>
                 <!-- textarea et non input pour la mise en forme -->
                 <!-- <input type="text" placeholder="Exemple : Faire les courses"  class="entry-field" 
                 formControlName="task_todo"> -->
                 <!-- formControlName="task_todo" [(ngModel)]="newTask"> -->
 
-                <input class="checkboxIsUrgent" type="checkbox" formControlName="urgent">La tâche est urgente ⚠️
-                    
-                <button class="btnValidatetask" type="submit" (click)="addTask()" [disabled]="!selectedCategory || taskForm.get('task_todo')?.invalid">Valider ma tâche</button>
+                <div class="checkboxIsUrgent">
+                    <input type="checkbox" id="checkbox" formControlName="urgent">
+                    <label for="checkbox"></label>
+                    <p class="pUrgent">La tâche est urgente ⚠️</p>
+                </div>
             </div>
-                
-                
-            
-            
         </form>
-        
     </div>
-    
-    
+    <button class="btnValidatetask" type="submit" (click)="addTask()"
+        [disabled]="!selectedCategory || taskForm.get('task_todo')?.invalid">Valider ma tâche</button>
+
+
+
+
+
+
 </main>

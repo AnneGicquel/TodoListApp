@@ -1,48 +1,59 @@
 /* BOUTONS CATEGORIES */
 
-.btnTaskCategoryGroup{
+.btnTaskCategoryGroup {
     display: flex;
     justify-content: space-around;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     display: none;
+
 }
-input[type="radio"]+ label {
+
+input[type="radio"]+label {
     padding: 15px 18px;
     line-height: 1.5;
-    border-radius: 50%; 
+    border-radius: 50%;
     background-color: var(--darkblue);
     border: 1px solid transparent;
 }
 
-input[type="radio"]:checked + label {
+input[type="radio"]:checked+label {
     background-color: var(--yellow);
-  }
+}
 
 
 
 /* PARTIE FORMULAIRE */
-/* .btnTaskCategory{
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: var(--darkblue);
-    text-align: center;
-} */
 
-.entry-field{
+.mainNewTask {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.formContainer {
+    margin: 40px 25px 160px 25px;
+    width: 340px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.entry-field {
     width: 338px;
     height: 182px;
     background-color: var(--darkblue);
     /* retire la bordure qui s'affiche au click de la saisie */
-    /* BESOIN??? */
     outline: none;
     display: flex;
     align-content: center;
 }
 
-.btnValidatetask{
+.btnValidatetask {
     width: 248px;
     height: 48px;
     left: 71px;
@@ -53,26 +64,86 @@ input[type="radio"]:checked + label {
 }
 
 .btnValidatetask:disabled,
-.btnValidatetask[disabled]{
-  background-color: #64A7D9; 
-  opacity: 0.5;
+.btnValidatetask[disabled] {
+    background-color: #64A7D9;
+    opacity: 0.5;
+}
+
+textarea {
+    padding: 24px 24px 24px 17px;
+}
+
+.btnValidatetask {
+    margin-bottom: 40px;
 }
 
 
-input .checkboxIsUrgent{
+/* CHECKBOX ISURGENT */
+
+/* les éléments enfants seront positionnés par rapport à cette classe parente.*/
+.checkboxIsUrgent {
+    position: relative;
+    display: flex;
+    margin-top: 28px;
+}
+
+
+/*Les éléments label à l'intérieur*/
+.checkboxIsUrgent label {
+    /*couleur de fond avant clic*/
+    background-color: var(--darkblue);
     border-radius: 50%;
-}
-[type=checkbox] {
-    width: 25px;
     height: 25px;
-    margin-right: 11px;
-    vertical-align: middle;
-    -webkit-appearance: none; 
-    border-radius: 50%;
-    background-color:var(--darkblue);
-    cursor: pointer;
-  }
-  input:checked{
-    background-color: var(--pink); 
-  }
-  
+    width: 25px;
+    /*position de l'input*/
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+/*:after représente la coche de la case à cocher*/
+.checkboxIsUrgent label:after {
+    /*couleur de la coche*/
+    border: 2px solid white;
+    /*De base, c'est un rectangle dont
+    on retire les droites du haut et de droite*/
+    border-top: none;
+    border-right: none;
+    content: "";
+    /*l'angle droit étant positionner à -45:
+    - height vaut la partie courte
+    - width la partie longue*/
+    /*taille de la partie courte de la coche*/
+    height: 6px;
+    /*taille de la partie longue de la coche*/
+    width: 10.50px;
+    /*-> rend invisible.*/
+    opacity: 0;
+    /*pour positionner la coche de manière précise avec left, transform etc..*/
+    position: absolute;
+    /*position de la coche depuis la gauche*/
+    left: 7px;
+    /*position de la coche depuis le haut*/
+    top: 6px;
+    /*forme 'angle droit' positionner à -45°*/
+    transform: rotate(-45deg);
+}
+
+/*visibilité cachée -> pas visibles sur la page web.*/
+.checkboxIsUrgent input[type="checkbox"] {
+    visibility: hidden;
+}
+
+/*Couleurs des éléments label une fois la case cochée.*/
+.checkboxIsUrgent input[type="checkbox"]:checked+label {
+    background-color: var(--pink);
+}
+
+/*-> rend visible après clic.*/
+.checkboxIsUrgent input[type="checkbox"]:checked+label:after {
+    opacity: 1;
+}
+
+.pUrgent {
+    margin-left: 22px;
+}
