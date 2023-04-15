@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 /* IMPORT QUICKSAND */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 /* font-family: 'Quicksand', sans-serif; */
@@ -20,13 +21,20 @@
 
 /* NORMALIZE */
 *, body{
+    /* basic */
     padding: 0;
     margin: 0;
-    /* ?? */
+    box-sizing: border-box;
+    /*  */
     list-style:none; 
     font-family: var(--quicksand);
     font-size: 16px;
-    color: var(--white);   
+    color: var(--white); 
+    /*  */
+    /* display: flex;
+    flex-direction: column; 
+    height: 100vh; 
+    max-height: 100vh;   */
 }
 
 

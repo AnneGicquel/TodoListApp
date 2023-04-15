@@ -1,13 +1,15 @@
-<div *ngFor="let item of taskService.todoListLS">
-      <label for="{{item.id}}">
-        <input class="test" id="{{item.id}}" [value]='item.id' type="checkbox">
-        {{item.category}} {{item.content}}
-      </label>
-</div>
+<p>Historique des tâches :</p>
+<ng-container *ngFor="let item of taskService.getTask()">
+  <div class="checkboxes">
+    <label for="{{item.id}}">
+      <input id="{{item.id}}" [value]='item.id' type="checkbox" class="roundCheckbox checked">
+      <span class="categorySpaceBtw">{{item.category}}</span> 
+      <span class="newLine">{{item.content}}</span>
+    </label>
+  </div>
+</ng-container>
 
 
-<!-- <ul>
-    <li *ngFor="let item of taskService.todoListLS">
-        {{item.category}} {{item.content}}
-    </li> 
-</ul> -->  
+
+
+

@@ -1,36 +1,31 @@
 <!-- if urgent -->
 
-<p>⚠️ Tâches urgentes </p>
-<ng-container *ngFor="let item of taskService.todoListLS">
+<p *ngIf="displayUrgentTask()">⚠️ Tâches urgentes </p>
+<ng-container *ngFor="let item of taskService.getTask()">
   <div class="taskList" *ngIf="item.isUrgent">
     <label for="{{item.id}}">
-      <input class="test" id="{{item.id}}" [value]='item.id' type="radio" (click)="saveOnHistory()">
-      <div (click)="editMyTask()">
-        {{item.category}} {{item.content}}
+      <input id="{{item.id}}" [value]='item.id' type="radio" (click)="saveOnHistory()">
+      <div class="taskContent" (click)="editMyTask()">
+        <span class="categorySpaceBtw">{{item.category}}</span> 
+        <span>{{item.content}}</span>
       </div>
     </label>
   </div>
 </ng-container>
-<!-- <ng-container *ngFor="let item of taskService.todoListLS">
-  <div *ngIf="item.isUrgent">
-    <label for="{{item.id}}">
-      <div (click)="editMyTask()">
-        <input class="test" id="{{item.id}}" [value]='item.id' type="checkbox">
-        {{item.category}} {{item.content}}
-      </div>
-    </label>
-  </div>
-</ng-container> -->
+
+
+
 
 <!-- if not urgent -->
 
-<p>🌸 Autres tâches</p>
-<ng-container *ngFor="let item of taskService.todoListLS">
-  <div *ngIf="!item.isUrgent">
+<p *ngIf="displayOtherTask()">🌸 Autres tâches</p>
+<ng-container *ngFor="let item of taskService.getTask()">
+  <div class="taskList" *ngIf="!item.isUrgent">
     <label for="{{item.content}}">
-      <div (click)="editMyTask()">
-        <input id="{{item.id}}" [value]='item.id' type="radio">
-        {{item.category}} {{item.content}}
+      <input id="{{item.id}}" [value]='item.id' type="radio" (click)="saveOnHistory()">
+      <div class="taskContent" (click)="editMyTask()">
+        <span class="categorySpaceBtw">{{item.category}}</span> 
+        <span>{{item.content}}</span>
       </div>
     </label>
   </div>

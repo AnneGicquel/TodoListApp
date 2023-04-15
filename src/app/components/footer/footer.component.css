@@ -1,26 +1,20 @@
 .footer{
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
     width: 390px;
     height: 100px;
-    left: 0px;
-    top: 745px;
     border-top: 1px solid var(--white);
 }
 
 button{
-    /* display: flex;
-    flex-direction: row;  */
     width: 65.86px;
     height: 65.86px;
     border-radius: 50%;
-    margin: 0 12.5px 0 12.5px;
+    margin: 0 12.5px; 
     background-color: var(--darkblue);
-
 }
+
 
 /* Centered Image Code !! */
 img {
@@ -29,17 +23,28 @@ img {
     margin: auto;
   }
 
-.iconPlusSize{
-    width: 35%;
- }
+/* pour une autre fois */
 
-/* buttons chgmt of color */
+/*BTN CHANGENT DE COULEUR SELON S ILS SONT ACTIFS
+MAIS CELA NE FONCTIONNE QU'AVEC UNE SEULE COULEUR 
 
-/* .lightgreen{
-    background-color: var(--lightgreen);
+SUR L'HTML IL FAUT AJOUTER routerLinkActive="active"
+
+<div class="buttons nav"> <!-- Ajoutez la classe nav pour créer une barre de navigation -->
+        <button class="btnTaskList" routerLink="/" routerLinkActive="active"> <!-- Utilisez routerLinkActive et spécifiez la classe "active" -->
+            <img src="assets/svg_footer/list.svg" alt="icône menu">
+        </button>
+
+        <button class="btnNewTask" routerLink="/new" routerLinkActive="active"> <!-- Utilisez routerLinkActive et spécifiez la classe "active" -->
+            <img class="iconPlusSize" src="assets/svg_footer/plus.svg" alt="icône plus">
+        </button>
+
+        <button class="btnHistory" routerLink="/history" routerLinkActive="active"> <!-- Utilisez routerLinkActive et spécifiez la classe "active" -->
+            <img src="assets/svg_footer/history.svg" alt="icône horloge">
+        </button>
+    </div>*/
+
+/* .nav .active {
+     background-color: #f00; 
 } */
 
-/* ?????? */
-.btnTaskList:checked{
-    background-color: red; 
-  }
