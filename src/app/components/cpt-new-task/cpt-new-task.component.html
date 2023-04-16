@@ -50,7 +50,7 @@
             <!--attribuer un formControlName qui correspond à la clé de taskForm -->
             <div class="inputNewTaskContainer">
                 <!-- includes() détermine si un tableau contient une valeur et renvoie true si c'est le cas, false sinon. -->
-                <textarea type="text" placeholder="Exemple : Faire les courses" class="entry-field"
+                <textarea [(ngModel)]="editContent" type="text" placeholder="Exemple : Faire les courses" class="entry-field"
                     formControlName="task_todo" required></textarea>
                 <!-- textarea et non input pour la mise en forme -->
                 <!-- <input type="text" placeholder="Exemple : Faire les courses"  class="entry-field" 

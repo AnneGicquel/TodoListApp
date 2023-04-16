@@ -4,18 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TodoListService {
+  todoList: any;
 
   constructor() { }
-  //TABLEAU VIDE POUR ACCUEILLIR LES OBJETS DE LA TODO
-  todoListLS:any[]=[]
-
-
+ 
   // CREATION et ENREGISTREMENT DS LE LS
   createTaskList() {
-    // Je crée un tableau vide
-    // const newTask: any[] = [];
-    
-
+  
     //je transforme la todoList qui est un objet en string
     const newTask = JSON.stringify([]);
     
@@ -29,15 +24,15 @@ export class TodoListService {
   // Méthode pour récupérer la todoList et le créer si il n'existe pas
    getTask(){
   // Je  récupère la todoList du LS et affecte sa valeur à une variable todoList
-  const todoList = localStorage.getItem('todoList');
+  const todoList = JSON.parse(localStorage.getItem('todoList') || '[]');
   //si la todo existe, je la transforme en objet et la retourne
-  if (todoList){
-    return JSON.parse(todoList)
-  }else{
+  // if (todoList){
+    return todoList
+  // }else{
     //sinon on crée la todoList et on la récupère. -> récursivité sur la fonction getTask
-    this.createTaskList();
-    this.getTask();
-  }
+    // this.createTaskList();
+    // this.getTask();
+  
   
   }
   
@@ -45,9 +40,6 @@ export class TodoListService {
   // CREATION DE LA LISTE DANS LE LS
   addTaskToTodoList (newTask: { id: any; content: any; category: string; isUrgent: boolean /*boolean*/;}) {
 
-    // Les newTask sont ajoutées au tableau vide
-    // this.todoListLS.push(newTask)
-    
     // Je récupère la liste
     const todoList = this.getTask();
     todoList.push(newTask)
