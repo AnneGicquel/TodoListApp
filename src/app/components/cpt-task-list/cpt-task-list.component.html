@@ -4,9 +4,9 @@
 <ng-container *ngFor="let item of taskService.getTask()">
   <div class="taskList" *ngIf="item.isUrgent">
     <label for="{{item.id}}">
-      <input id="{{item.id}}" [value]='item.id' type="radio" (click)="saveOnHistory()">
+      <input type="radio" [value]="item.id" type="radio" (click)="saveOnHistory()">
       <div class="taskContent" (click)="editMyTask()">
-        <span class="categorySpaceBtw">{{item.category}}</span> 
+        <span class="categorySpaceBtw">{{item.category}}</span>
         <span>{{item.content}}</span>
       </div>
     </label>
@@ -24,7 +24,7 @@
     <label for="{{item.content}}">
       <input id="{{item.id}}" [value]='item.id' type="radio" (click)="saveOnHistory()">
       <div class="taskContent" (click)="editMyTask()">
-        <span class="categorySpaceBtw">{{item.category}}</span> 
+        <span class="categorySpaceBtw">{{item.category}}</span>
         <span>{{item.content}}</span>
       </div>
     </label>

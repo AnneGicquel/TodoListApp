@@ -1,6 +1,5 @@
 <main class="mainNewTask">
 
-
     <!-- Un groupe radio est défini en attribuant la même valeur à chacun
          des boutons radio du groupe name. Une fois qu'un groupe radio est 
          établi, la sélection d'un bouton radio dans ce groupe désélectionne 
@@ -68,10 +67,4 @@
     </div>
     <button class="btnValidatetask" type="submit" (click)="addTask()"
         [disabled]="!selectedCategory || taskForm.get('task_todo')?.invalid">Valider ma tâche</button>
-
-
-
-
-
-
 </main>

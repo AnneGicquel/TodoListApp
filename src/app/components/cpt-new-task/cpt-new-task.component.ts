@@ -14,53 +14,37 @@ export class CptNewTaskComponent {
   // VALEURS DU GROUPE DE BOUTONS CATEGORIES
   selectedCategory!: string;
 
-  
-  
+
+
   // FORMULAIRE 
 
   // déclaration la propriété de type FormGroup
   taskForm!: FormGroup
- 
+
   // injection de formBuilder pour permettre de construire un formulaire.
   constructor(private formBuilder: FormBuilder, public taskService: TodoListService, public route: Router) { }
 
   ngOnInit() {
-    // on assigne à 'taskForm' le formulaire qu'on va créer
+    // assigner à 'taskForm' le formulaire qu'on va créer
     // .group({})-> prend un objet (avec la liste clé/valeur) en argument
     this.taskForm = this.formBuilder.group({
       // clé avec la valeur null par défaut
       task_todo: [null],/*initialisation à null*/
       urgent: [false] /*initialisation à false*/
       // changera de valeur au checked
-      })
+    })
   }
 
   // LISTE DES TASKS
+
   // créer une liste vide pour récupérer les tâches à accomplir
-  newTaskList:any [] = [];
+  newTaskList: any[] = [];
 
-  // SAISIE USER
-  //récupèrer la saisie utilisateur.rice
-  // onSubmit(): any {
-  //   return this.taskForm.value;
-  // }
-
- 
-  // CREATION DES ID
-  //créer un indice par rapport à l'index 
-  // idNumber() {
-  //   let lastIndex = this.newTaskList.length; // Récupère l'index du dernier élément dans le tableau
-  //   console.log('r' + lastIndex)
-  //   if (this.newTaskList.length !== 0) {
-  //     // S'il y a des éléments dans le tableau
-  //     ; // Récupère le dernier élément dans le tableau
-  //     return lastIndex + 1 // Retourne l'identifiant unique incrémenté de 1
-  //   } else{return 1}}
-  
 
   // RECUPERER SAISIE, TRANSFORMER EN OBJET ET L'ENVOYER AU LS
+
   addTask() {
-    // assigne la saisie utilisateur.rice à une variable
+    // assigner la saisie utilisateur.rice à une variable
     let newTask = this.taskForm.value;
     // a retirer
     console.log(newTask)
@@ -73,22 +57,20 @@ export class CptNewTaskComponent {
       isUrgent: newTask.urgent /*valeur checked or not*/
     }
 
-    // ajoute l'objet à la liste newTaskList
+    // ajouter l'objet à la liste newTaskList
     this.newTaskList.push(todoObj)
 
     // a retirer
     console.log(this.newTaskList)
     console.log(this.selectedCategory)
 
-    // envoie la tâche au LocalStorage
+    // envoyer la tâche au LocalStorage
     this.taskService.addTaskToTodoList(todoObj);
 
-    // redirige vers la page no-task qui répond maintenant 
+    // rediriger vers la page no-task qui répond maintenant 
     // à la condition: LS non vide
     this.route.navigate(['/'])
 
-    // effacer la saisie ???? -> RESETTTT !!!
-    // newTask = '';
   };
 
 

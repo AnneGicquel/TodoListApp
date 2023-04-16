@@ -1,4 +1,4 @@
-.footer{
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,12 +7,11 @@
     border-top: 1px solid var(--white);
 }
 
-button{
+button {
     width: 65.86px;
     height: 65.86px;
     border-radius: 50%;
-    margin: 0 12.5px; 
-    background-color: var(--darkblue);
+    margin: 0 12.5px;
 }
 
 
@@ -21,7 +20,27 @@ img {
     display: block;
     width: 50%;
     margin: auto;
-  }
+}
+
+/* CHANGEMENT COULEUR DE BOUTONS */
+
+.byDefault {
+    background-color: var(--darkblue);
+}
+
+.lightgreen {
+    background-color: var(--lightgreen);
+}
+
+.yellow {
+    background-color: var(--yellow);
+}
+
+.pink {
+    background-color: var(--pink);
+}
+
+
 
 /* pour une autre fois */
 
@@ -47,4 +66,3 @@ SUR L'HTML IL FAUT AJOUTER routerLinkActive="active"
 /* .nav .active {
      background-color: #f00; 
 } */
-
