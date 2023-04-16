@@ -1,3 +1,5 @@
+// POUR FAIRE LES TEST AU DEMARRAGE DU CODE 
+
 // export type CategoryType = "shopping" | "health" | "work" | "bills" | "cleaning" | "other";
 
 // export interface ITodo {

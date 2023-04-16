@@ -4,14 +4,14 @@ p {
 }
 
 /* ESPACE ENTRE INTERPOLATIONS et NWLINE */
-.categorySpaceBtw{
+.categorySpaceBtw {
   margin-right: 10px;
-  }
+}
 
-.newLine{
+.newLine {
   /* Pour le retour à la ligne !! */
   word-break: break-all;
-  max-width: 297px; 
+  max-width: 297px;
   /* Ce n'est pas parfait.. sorry, je n'arrive pas
   à empêcher que ça retourne sous le bouton rond...:-/ */
 }
@@ -21,7 +21,7 @@ p {
 
 .checkboxes {
   margin: 10px 23px;
-  margin-bottom: 23px;  
+  margin-bottom: 23px;
 }
 
 .roundCheckbox {
@@ -46,7 +46,3 @@ p {
   background-repeat: no-repeat;
   background-size: 60%;
 }
-
-
-
-

@@ -1,38 +1,15 @@
-<!-- <div class="footer">
-
-    <div class="buttons">
-
-        <button class="btnTaskList" routerLink="/" routerLinkActive="active">
-            <img src="assets/svg_footer/list.svg" alt="icône menu">
-        </button>
-
-        <button class="btnNewTask" routerLink="/new">
-            <img class="iconPlusSize" src="assets/svg_footer/plus.svg" alt="icône plus">
-        </button>
-
-        <button class="btnHistory" routerLink="/history">
-            <img src="assets/svg_footer/history.svg" alt="icône horloge">
-        </button>
-
-    </div>
-
-</div> -->
-
-<!-- <button [class.homePage]="router.url.endsWith('/')" class="btnTaskList" routerLink="/">
-    <img src="assets/svg_footer/list.svg" alt="icône menu">
-</button>  -->
-
 <div class="footer">
-    <div class="buttons"> <!-- Ajoutez la classe nav pour créer une barre de navigation -->
-        <button class="btnTaskList" routerLink="/" routerLinkActive="active"> <!-- Utilisez routerLinkActive et spécifiez la classe "active" -->
+    <div class="buttons">
+        <!-- définir les classes CSS dynamiquement avec [ngClass]. "lightgreen" if true, else "byDefault" -->
+        <button class="btnTaskList" routerLink="/" [ngClass]="{'lightgreen' : home, 'byDefault' : !home}">
             <img src="assets/svg_footer/list.svg" alt="icône menu">
         </button>
 
-        <button class="btnNewTask" routerLink="/new" routerLinkActive="active"> <!-- Utilisez routerLinkActive et spécifiez la classe "active" -->
+        <button class="btnNewTask" routerLink="/new" [ngClass]="{'yellow' : new, 'byDefault' : !new}">
             <img class="iconPlusSize" src="assets/svg_footer/plus.svg" alt="icône plus">
         </button>
 
-        <button class="btnHistory" routerLink="/history" routerLinkActive="active"> <!-- Utilisez routerLinkActive et spécifiez la classe "active" -->
+        <button class="btnHistory" routerLink="/history" [ngClass]="{'pink' : history, 'byDefault' : !history}">
             <img src="assets/svg_footer/history.svg" alt="icône horloge">
         </button>
     </div>
