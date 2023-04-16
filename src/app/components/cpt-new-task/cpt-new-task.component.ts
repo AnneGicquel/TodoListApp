@@ -13,7 +13,7 @@ export class CptNewTaskComponent {
 
   // VALEURS DU GROUPE DE BOUTONS CATEGORIES
   selectedCategory!: string;
-
+  
 
 
   // FORMULAIRE 
@@ -25,6 +25,9 @@ export class CptNewTaskComponent {
   constructor(private formBuilder: FormBuilder, public taskService: TodoListService, public route: Router) { }
 
   ngOnInit() {
+
+    // PARTIE FORMULAIRE
+
     // assigner à 'taskForm' le formulaire qu'on va créer
     // .group({})-> prend un objet (avec la liste clé/valeur) en argument
     this.taskForm = this.formBuilder.group({
@@ -33,7 +36,20 @@ export class CptNewTaskComponent {
       urgent: [false] /*initialisation à false*/
       // changera de valeur au checked
     })
-  }
+
+    // PARTIE MODIFICATION
+
+      // accéder à "category", etc en utilisant la propriété "state" de l'objet "history
+      this.editSelectedCategory = history.state.category;
+      this.editContent = history.state.content;
+      this.editIsUrgent = history.state.isUrgent;
+      console.log(this.editSelectedCategory)
+      console.log(this.editContent)
+      console.log(this.editIsUrgent)
+    }
+  
+    
+  
 
   // LISTE DES TASKS
 
@@ -48,6 +64,7 @@ export class CptNewTaskComponent {
     let newTask = this.taskForm.value;
     // a retirer
     console.log(newTask)
+    console.log('longueur' + this.newTaskList.length)
 
     // construction de l'objet de la todo "todoObj"
     let todoObj = {
@@ -74,4 +91,12 @@ export class CptNewTaskComponent {
   };
 
 
+  // MODIFICATION DE TACHE
+   editSelectedCategory!: string;
+   editContent!: string;
+   editIsUrgent!: boolean;
+
 }
+
+
+

@@ -40,8 +40,16 @@ export class CptTaskListComponent {
   }
 
   // -> LA TASK
-  editMyTask() {
-    this.route.navigate(['/new'])
+  
+  //-> lien vers la modification de tache sur page new
+
+  /* méthode navigate accepte plusieurs arguments,
+  la route de destination et un objet d'état 
+  ({ state: {...} }) pour envoyer des data 
+  à la page new.*/
+   
+  editMyTask(item: any) {
+    this.route.navigate(['/new'], { state: { category: item.category, content: item.content, isUrgent: item.isUrgent } });
   }
 
 

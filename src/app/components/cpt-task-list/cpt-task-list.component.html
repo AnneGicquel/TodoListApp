@@ -5,7 +5,7 @@
   <div class="taskList" *ngIf="item.isUrgent">
     <label for="{{item.id}}">
       <input type="radio" [value]="item.id" type="radio" (click)="saveOnHistory()">
-      <div class="taskContent" (click)="editMyTask()">
+      <div class="taskContent" (click)="editMyTask(item)">
         <span class="categorySpaceBtw">{{item.category}}</span>
         <span>{{item.content}}</span>
       </div>
@@ -23,7 +23,7 @@
   <div class="taskList" *ngIf="!item.isUrgent">
     <label for="{{item.content}}">
       <input id="{{item.id}}" [value]='item.id' type="radio" (click)="saveOnHistory()">
-      <div class="taskContent" (click)="editMyTask()">
+      <div class="taskContent" (click)="editMyTask(item)">
         <span class="categorySpaceBtw">{{item.category}}</span>
         <span>{{item.content}}</span>
       </div>
