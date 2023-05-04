@@ -66,12 +66,14 @@ export class CptNewTaskComponent {
     console.log(newTask)
     console.log('longueur' + this.newTaskList.length)
 
+  
     // construction de l'objet de la todo "todoObj"
     let todoObj = {
-      id: this.newTaskList.length + 1,
+      id: Date.now(),/*id unique cause this js method allows to get number of miliseconds elapsed since 1st jan 1970*/
       content: newTask.task_todo,
       category: this.selectedCategory,
-      isUrgent: newTask.urgent /*valeur checked or not*/
+      isUrgent: newTask.urgent, /*valeur checked or not*/
+      date: Date()
     }
 
     // ajouter l'objet à la liste newTaskList
@@ -89,7 +91,6 @@ export class CptNewTaskComponent {
     this.route.navigate(['/'])
 
   };
-
 
   // MODIFICATION DE TACHE
    editSelectedCategory!: string;
