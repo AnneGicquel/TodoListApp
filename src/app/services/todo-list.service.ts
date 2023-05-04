@@ -38,7 +38,7 @@ export class TodoListService {
   
 
   // CREATION DE LA LISTE DANS LE LS
-  addTaskToTodoList (newTask: { id: any; content: any; category: string; isUrgent: boolean /*boolean*/;}) {
+  addTaskToTodoList (newTask: { id: number; content: any; category: string; isUrgent: boolean; date:string;}) {
 
     // Je récupère la liste
     const todoList = this.getTask();
@@ -47,8 +47,7 @@ export class TodoListService {
     localStorage.setItem('todoList', JSON.stringify(todoList));
   }
 
-  
-  
+
 }
 
 
